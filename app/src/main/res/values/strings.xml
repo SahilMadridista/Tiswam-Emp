@@ -9,7 +9,13 @@
 
     <string name="create_account">Create account</string>
 
+    <string name="sign_up">Sign up</string>
+
     <string name="emp_app">Employee version</string>
+
+    <string name="upload_picture">Upload profile picture</string>
+
+    <string name="choose_image">Choose image</string>
 
     <string name="welcome">Welcome to</string>
 
@@ -17,16 +23,16 @@
 
     <string name="next">Next</string>
 
+    <string name="type_email">Type your email</string>
+
+    <string name="type_pass">Type your passsword</string>
+    <string name="type_name">Type your name</string>
+    <string name="type_phone">Type your phone number</string>
     <string-array name="posts">
         <item>Select your team</item>
         <item>Business Development Executive</item>
         <item>Business Development Manager</item>
         <item>IT Team</item>
     </string-array>
-
-    <string name="type_email">Type your email</string>
-    <string name="type_pass">Type your passsword</string>
-    <string name="type_name">Type your name</string>
-    <string name="type_phone">Type your phone number</string>
 
 </resources>
