@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.tiswamemp"
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -29,5 +29,26 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Material design
+
+    implementation 'com.google.android.material:material:1.2.1'
+
+    // Circular image
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Multidex
+
+    implementation 'com.android.support:multidex:1.0.3'
+
+
+    // cropImage
+
+    // api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+
+    // Picasso
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }

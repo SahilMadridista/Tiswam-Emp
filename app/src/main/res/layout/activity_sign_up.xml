@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity"
+    android:background="@drawable/signup_bg">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ambit_regular"
+        android:text="@string/welcome"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="20dp"
+        android:textColor="@color/white"
+        android:textSize="15sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ambit_regular"
+        android:text="@string/tech_mark"
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/textView3"
+        android:textColor="@color/white"
+        android:textSize="25sp">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ambit_regular"
+        android:text="@string/digi_sol"
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/textView4"
+        android:textColor="@color/white"
+        android:textSize="17sp">
+
+    </TextView>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/logo_white"
+        android:scaleY="1.5"
+        android:transitionName="image"
+        android:scaleX="1.5"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp">
+
+    </ImageView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_layout"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:theme="@style/et"
+        android:layout_below="@id/textView5">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name_et"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ambit_regular"
+            android:theme="@style/et"
+            android:paddingBottom="17dp"
+            android:hint="@string/type_name"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:drawablePadding="10dp"
+            android:textColorHint="@color/extra_light_grey"
+            android:drawableStart="@drawable/ic_email_white"
+            android:inputType="textCapWords">
+
+        </EditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</RelativeLayout>

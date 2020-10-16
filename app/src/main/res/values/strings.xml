@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Tiswam Emp</string>
+
+    <string name="tech_mark">TECH MARK</string>
+
+    <string name="digi_sol">Digital Solutions</string>
+
+    <string name="login_with_email">Login with EMAIL</string>
+
+    <string name="create_account">Create account</string>
+
+    <string name="emp_app">Employee version</string>
+
+    <string name="welcome">Welcome to</string>
+
+    <string-array name="posts">
+        <item>Select your team</item>
+        <item>Business Development Executive</item>
+        <item>Business Development Manager</item>
+        <item>IT Team</item>
+    </string-array>
+
+    <string name="type_email">Type your email</string>
+    <string name="type_pass">Type your passsword</string>
+    <string name="type_name">Type your name</string>
+    <string name="type_phone">Type your phone number</string>
+
 </resources>
