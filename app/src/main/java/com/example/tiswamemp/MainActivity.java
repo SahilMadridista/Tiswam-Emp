@@ -54,6 +54,26 @@ public class MainActivity extends AppCompatActivity {
          }
       });
 
+      final Button button = findViewById(R.id.button);
+      button.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+
+            Fade fade = new Fade();
+            View decor = getWindow().getDecorView();
+            fade.excludeTarget(decor.findViewById(R.id.action_bar_container), true);
+            fade.excludeTarget(android.R.id.statusBarBackground, true);
+            fade.excludeTarget(android.R.id.navigationBarBackground, true);
+            getWindow().setEnterTransition(fade);
+            getWindow().setExitTransition(fade);
+            Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+            ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    MainActivity.this, img, Objects.requireNonNull(ViewCompat.getTransitionName(img)));
+            startActivity(intent, options.toBundle());
+
+         }
+      });
+
 
    }
 

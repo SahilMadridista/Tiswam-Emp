@@ -93,6 +93,12 @@ public class SignUpActivity extends AppCompatActivity {
          return;
       }
 
+      if(spinner.getSelectedItem().toString().trim().equals("Select your team")){
+         String snack = "Please select your team.";
+         showSnack(snack);
+         return;
+      }
+
       Intent intent = new Intent(getApplicationContext(),ProfilePhotoActivity.class);
       intent.putExtra("name",Name.getText().toString().trim());
       intent.putExtra("phone",Phone.getText().toString().trim());
