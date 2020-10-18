@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Tiswam Emp</string>
 
     <string name="tech_mark">TECH MARK</string>
@@ -34,11 +34,18 @@
     <string name="type_pass">Type your passsword</string>
     <string name="type_name">Type your name</string>
     <string name="type_phone">Type your phone number</string>
+
+    <string name="loading" tools:ignore="TypographyEllipsis">Loading...</string>
+
+    <string name="logging" tools:ignore="TypographyEllipsis">Logging in...</string>
+
     <string-array name="posts">
         <item>Select your team</item>
         <item>Business Development Executive</item>
         <item>Business Development Manager</item>
         <item>IT Team</item>
     </string-array>
+
+    <string name="new_lead">New lead</string>
 
 </resources>

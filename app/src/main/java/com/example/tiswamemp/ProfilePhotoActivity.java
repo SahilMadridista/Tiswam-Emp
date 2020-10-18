@@ -227,7 +227,9 @@ public class ProfilePhotoActivity extends AppCompatActivity {
       employee.url = URL;
       employee.team = Team;
 
-      firebaseFirestore.collection("Employees").document(Email).set(employee).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+      firebaseFirestore.collection("Employees").document(Objects.requireNonNull(firebaseAuth.getCurrentUser())
+              .getUid()).set(employee).addOnSuccessListener(new OnSuccessListener<Void>() {
          @Override
          public void onSuccess(Void aVoid) {
 
