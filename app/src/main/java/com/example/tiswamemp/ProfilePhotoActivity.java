@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +24,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -31,6 +35,7 @@ import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class ProfilePhotoActivity extends AppCompatActivity {
@@ -227,17 +232,12 @@ public class ProfilePhotoActivity extends AppCompatActivity {
       employee.url = URL;
       employee.team = Team;
 
-
       firebaseFirestore.collection("Employees").document(Objects.requireNonNull(firebaseAuth.getCurrentUser())
               .getUid()).set(employee).addOnSuccessListener(new OnSuccessListener<Void>() {
          @Override
          public void onSuccess(Void aVoid) {
 
-            Toast.makeText(getApplicationContext(),"Account created and verification email sent. You can login only after verifying your email",
-                    Toast.LENGTH_SHORT).show();
-            progressDialog.dismiss();
-            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-            finish();
+            storeInArray(Team,Name);
 
          }
       }).addOnFailureListener(new OnFailureListener() {
@@ -251,6 +251,65 @@ public class ProfilePhotoActivity extends AppCompatActivity {
       });
 
    }
+
+   private void storeInArray(String team, final String name) {
+
+      String[] posts = getResources().getStringArray(R.array.posts);
+      assert team != null;
+
+
+      if(team.equals(posts[2])){
+
+         DocumentReference documentReference = firebaseFirestore.collection("BDM").document("bdm");
+         documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+               DocumentSnapshot documentSnapshot = task.getResult();
+               assert documentSnapshot != null;
+
+               if(task.isSuccessful()){
+                  ArrayList<String> list = (ArrayList<String>) documentSnapshot.get("list");
+                  assert list != null;
+                  list.add(name);
+
+                  for(int i = 0;i<list.size();i++){
+
+                     firebaseFirestore.collection("BDM").document("bdm").update("list",
+                             FieldValue.arrayUnion(list.get(i))).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+
+                           Toast.makeText(getApplicationContext(),"Account created and verification email sent. You can login only after verifying your email",
+                                   Toast.LENGTH_SHORT).show();
+
+                           progressDialog.dismiss();
+                           startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                           finish();
+
+                        }
+                     });
+                  }
+               }
+            }
+         });
+      }
+
+      else{
+
+         Toast.makeText(getApplicationContext(),"Account created and verification email sent. You can login only after verifying your email",
+                    Toast.LENGTH_SHORT).show();
+
+         progressDialog.dismiss();
+         startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+         finish();
+
+      }
+
+
+
+   }
+
 
    private void showSnack(String snack) {
 

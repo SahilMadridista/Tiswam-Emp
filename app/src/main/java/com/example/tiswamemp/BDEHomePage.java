@@ -108,14 +108,14 @@ public class BDEHomePage extends AppCompatActivity {
 
             // Add code here
 
-            /*SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+            SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putInt("login", SharedPrefConsts.NO_LOGIN);
             editor.apply();
 
             firebaseAuth.signOut();
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();*/
+            finish();
 
             Toast.makeText(getApplicationContext(),"Sign out button clicked",Toast.LENGTH_SHORT).show();
 

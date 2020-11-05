@@ -20,7 +20,7 @@ public class Lead {
    String advance_amount;
    String remaining_amount;
    String payment_mode;
-   String deal_status;
+   String bdm_assigned_status;
 
    public Lead(){
 
@@ -47,7 +47,7 @@ public class Lead {
       this.advance_amount = advance_amount;
       this.remaining_amount = remaining_amount;
       this.payment_mode = payment_mode;
-      this.deal_status = deal_status;
+      this.bdm_assigned_status = deal_status;
    }
 
    public String getBde_name() {
@@ -114,7 +114,7 @@ public class Lead {
       return payment_mode;
    }
 
-   public String getDeal_status() {
-      return deal_status;
+   public String getBdm_assigned_status() {
+      return bdm_assigned_status;
    }
 }

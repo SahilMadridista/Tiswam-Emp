@@ -193,7 +193,8 @@ public class NewLeadActivity extends AppCompatActivity implements DatePickerDial
       lead.bde_phone = phone;
       lead.meeting_date = date;
       lead.meeting_time = time;
-      lead.bdm = "0";
+      lead.bdm = "no";
+      lead.bdm_assigned_status = "no";
 
       firebaseFirestore.collection("Leads").document()
               .set(lead).addOnSuccessListener(new OnSuccessListener<Void>() {
