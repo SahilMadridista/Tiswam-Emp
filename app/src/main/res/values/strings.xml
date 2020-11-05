@@ -39,6 +39,8 @@
 
     <string name="logging" tools:ignore="TypographyEllipsis">Logging in...</string>
 
+    <string name="new_lead">New lead</string>
+
     <string-array name="posts">
         <item>Select your team</item>
         <item>Business Development Executive</item>
@@ -46,6 +48,37 @@
         <item>IT Team</item>
     </string-array>
 
-    <string name="new_lead">New lead</string>
+
+    // Menu items
+
+    <string name="newLead">Create new lead</string>
+
+    <string name="profile">Profile information</string>
+
+    <string name="leads">BDM assigned leads</string>
+
+    <string name="sale">My sales</string>
+
+    <string name="sign_out">Sign out</string>
+
+    // new lead activity
+
+    <string name="cnl">Create New Lead</string>
+
+    <string name="lead_name">Lead\'s name</string>
+    <string name="lead_email">Lead\'s email address</string>
+    <string name="lead_phone">Lead\'s phone number</string>
+    <string name="business_name">Business name</string>
+    <string name="business_address">Business address</string>
+    <string name="meeting_date">Meeting date</string>
+    <string name="meeting_time">Meeting time</string>
+    <string name="done">Done</string>
+
+
+    // BDE home page
+
+    <string name="all_leads">All leads</string>
+
+    <string name="search">Search</string>
 
 </resources>

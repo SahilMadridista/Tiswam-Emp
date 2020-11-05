@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item android:id="@+id/profile" android:title="@string/profile">
 
+    </item>
+
+    <item android:id="@+id/lead" android:title="@string/leads">
+
+    </item>
+
+    <item android:id="@+id/search" android:title="@string/search">
+
+    </item>
+
+    <item android:id="@+id/sales" android:title="@string/sale">
+
+    </item>
+
+    <item android:id="@+id/sign_out" android:title="@string/sign_out">
+
+    </item>
 
 
 </menu>

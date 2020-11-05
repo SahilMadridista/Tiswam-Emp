@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/root_layout"
+    android:layout_height="match_parent"
+    tools:context=".NewLeadActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/done_btn">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cnl"
+                android:id="@+id/head"
+                android:textColor="@color/colorPrimaryDark"
+                android:fontFamily="@font/ambit_regular"
+                android:textSize="23sp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp">
+
+            </TextView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lead_name_layout"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/head">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lead_name"
+                    android:id="@+id/lead_name_et"
+                    android:layout_below="@id/head"
+                    android:fontFamily="@font/ambit_regular"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:inputType="textCapWords"
+                    android:drawableStart="@drawable/ic_name_color"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:drawablePadding="10dp"
+                    android:paddingBottom="15dp">
+
+                </EditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lead_email_layout"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/lead_name_layout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lead_email"
+                    android:id="@+id/lead_email_et"
+                    android:layout_below="@id/head"
+                    android:fontFamily="@font/ambit_regular"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:inputType="textEmailAddress"
+                    android:drawableStart="@drawable/ic_email_color"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:drawablePadding="10dp"
+                    android:paddingBottom="15dp">
+
+                </EditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lead_phone_layout"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/lead_email_layout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/lead_phone"
+                    android:id="@+id/lead_phone_et"
+                    android:layout_below="@id/head"
+                    android:fontFamily="@font/ambit_regular"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:inputType="phone"
+                    android:digits="0123456789"
+                    android:maxLength="10"
+                    android:drawableStart="@drawable/ic_phone_color"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:drawablePadding="10dp"
+                    android:paddingBottom="15dp">
+
+                </EditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lead_business_layout"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/lead_phone_layout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/business_name"
+                    android:id="@+id/lead_business_et"
+                    android:layout_below="@id/head"
+                    android:fontFamily="@font/ambit_regular"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:inputType="textCapWords"
+                    android:drawableStart="@drawable/ic_business"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:drawablePadding="10dp"
+                    android:paddingBottom="15dp">
+
+                </EditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lead_address_layout"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/lead_business_layout">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/business_address"
+                    android:id="@+id/lead_address_et"
+                    android:layout_below="@id/head"
+                    android:fontFamily="@font/ambit_regular"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:inputType="textCapWords"
+                    android:drawableStart="@drawable/ic_business_location"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:drawablePadding="10dp"
+                    android:paddingBottom="15dp">
+
+                </EditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg"
+                android:id="@+id/meeting_date_btn"
+                android:layout_below="@id/lead_address_layout"
+                android:layout_marginTop="15dp"
+                android:text="@string/meeting_date"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:fontFamily="@font/ambit_regular"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+            </Button>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/btn_bg"
+                android:id="@+id/meeting_time_btn"
+                android:layout_below="@id/meeting_date_btn"
+                android:layout_marginTop="15dp"
+                android:text="@string/meeting_time"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:fontFamily="@font/ambit_regular"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp">
+
+            </Button>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/done_btn"
+        android:background="@color/colorPrimaryDark"
+        android:text="@string/done"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:fontFamily="@font/ambit_regular">
+
+    </Button>
+
+
+
+
+</RelativeLayout>
