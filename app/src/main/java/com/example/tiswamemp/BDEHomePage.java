@@ -84,29 +84,22 @@ public class BDEHomePage extends AppCompatActivity {
 
          case R.id.profile:
 
-            // Add code here
-
             Toast.makeText(getApplicationContext(),"Profile button clicked",Toast.LENGTH_SHORT).show();
             break;
 
          case R.id.lead:
 
-            // Add code here
-
             Toast.makeText(getApplicationContext(),"Leads button clicked",Toast.LENGTH_SHORT).show();
+            break;
 
 
          case R.id.sales:
 
-            // Add Code here
-
             Toast.makeText(getApplicationContext(),"Sales button clicked",Toast.LENGTH_SHORT).show();
-
+            break;
 
 
          case R.id.sign_out:
-
-            // Add code here
 
             SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
