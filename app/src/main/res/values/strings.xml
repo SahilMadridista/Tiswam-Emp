@@ -53,7 +53,7 @@
 
     <string name="newLead">Create new lead</string>
 
-    <string name="profile">Profile information</string>
+    <string name="profile">Profile</string>
 
     <string name="leads">BDM assigned leads</string>
 
@@ -78,7 +78,16 @@
     // BDE home page
 
     <string name="all_leads">All leads</string>
-
     <string name="search">Search</string>
+    <string name="confirm_sign_out">Do you really want to sign out ?</string>
+    <string name="confirm">Confirm</string>
+
+
+    // BDM home page
+
+    <string name="calender">See meetings by date</string>
+    <string name="done_deals">My done deals</string>
+    <string name="showing_meetings">Showing you your meetings of</string>
+    <string name="today">Today\'s date</string>
 
 </resources>

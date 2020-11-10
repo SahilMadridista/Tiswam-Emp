@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/bdm_profile"
+        android:title="@string/profile">
+
+    </item>
+
+    <item
+        android:id="@+id/schedule"
+        android:title="@string/calender">
+
+    </item>
+
+    <item
+        android:id="@+id/done_deals"
+        android:title="@string/done_deals">
+
+    </item>
+
+    <item
+        android:title="@string/sign_out"
+        android:id="@+id/signout">
+
+    </item>
+
+</menu>

@@ -6,23 +6,86 @@
     android:layout_height="match_parent"
     tools:context=".BDMHomePage">
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:background="@color/colorPrimary"
-        android:layout_centerInParent="true">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/bdm_homepage_toolbar"
+        android:background="@color/colorPrimaryDark"
+        app:title="Tech-Mark"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    </TextView>
+    </androidx.appcompat.widget.Toolbar>
 
-    <Button
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimaryDark"
-        android:text="@string/sign_out"
-        android:textColor="@color/white"
-        android:id="@+id/sign_out">
+        android:id="@+id/date_card"
+        android:layout_margin="5dp"
+        android:layout_below="@id/bdm_homepage_toolbar">
 
-    </Button>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/showing_meeting_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="0dp"
+                android:text="@string/showing_meetings"
+                android:textSize="14sp">
+
+            </TextView>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/today"
+                android:id="@+id/today_date"
+                android:textStyle="bold"
+                android:layout_below="@id/showing_meeting_text"
+                android:paddingStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingEnd="0dp"
+                android:textSize="25sp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/date_card"
+        android:layout_margin="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/today_meetings_recyclerview">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
 
 </RelativeLayout>

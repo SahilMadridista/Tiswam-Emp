@@ -16,6 +16,7 @@ public class Lead {
    String meeting_time;
    ArrayList<String> services_offered;
    String bdm;
+   String deal_status;
    String deal_amount;
    String advance_amount;
    String remaining_amount;
@@ -29,8 +30,8 @@ public class Lead {
    public Lead(String bde_name, String bde_phone, String bde_email, String name,
                String email, String phone, String business_name, String business_address,
                String meeting_date, String meeting_time, ArrayList<String> services_offered,
-               String bdm, String deal_amount, String advance_amount,
-               String remaining_amount, String payment_mode, String deal_status) {
+               String bdm, String deal_status, String deal_amount, String advance_amount,
+               String remaining_amount, String payment_mode, String bdm_assigned_status) {
       this.bde_name = bde_name;
       this.bde_phone = bde_phone;
       this.bde_email = bde_email;
@@ -43,11 +44,12 @@ public class Lead {
       this.meeting_time = meeting_time;
       this.services_offered = services_offered;
       this.bdm = bdm;
+      this.deal_status = deal_status;
       this.deal_amount = deal_amount;
       this.advance_amount = advance_amount;
       this.remaining_amount = remaining_amount;
       this.payment_mode = payment_mode;
-      this.bdm_assigned_status = deal_status;
+      this.bdm_assigned_status = bdm_assigned_status;
    }
 
    public String getBde_name() {
@@ -96,6 +98,10 @@ public class Lead {
 
    public String getBdm() {
       return bdm;
+   }
+
+   public String getDeal_status() {
+      return deal_status;
    }
 
    public String getDeal_amount() {

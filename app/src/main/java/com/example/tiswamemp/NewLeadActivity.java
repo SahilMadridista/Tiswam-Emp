@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class NewLeadActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
@@ -35,6 +36,7 @@ public class NewLeadActivity extends AppCompatActivity implements DatePickerDial
    private FirebaseAuth firebaseAuth;
    EditText LeadName,LeadEmail,LeadPhone,LeadBusinessName,LeadBusinessAddress;
    ProgressDialog progressDialog;
+   ArrayList<String> services = new ArrayList<>();
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -194,6 +196,9 @@ public class NewLeadActivity extends AppCompatActivity implements DatePickerDial
       lead.meeting_date = date;
       lead.meeting_time = time;
       lead.bdm = "no";
+      lead.services_offered = services;
+      lead.deal_status = "pending";
+      lead.deal_amount = "no";
       lead.bdm_assigned_status = "no";
 
       firebaseFirestore.collection("Leads").document()
