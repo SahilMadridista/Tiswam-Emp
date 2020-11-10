@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="3sp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/org_name"
+            android:textSize="21sp"
+            android:gravity="start"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/lead_org_name"
+            android:textColor="@color/dark_grey"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/org_address"
+            android:layout_below="@id/org_name"
+            android:textSize="17sp"
+            android:gravity="start"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:text="@string/address"
+            android:textColor="@color/dark_grey">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:id="@+id/lead_name"
+            android:layout_below="@id/org_address"
+            android:textSize="13sp"
+            android:gravity="center_vertical|start"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="@string/lead_person_name"
+            android:textColor="@color/dark_grey">
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lead_name"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:id="@+id/time_layout">
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_time"
+                android:id="@+id/time_icon">
+
+            </ImageView>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/time"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColor="@color/dark_grey"
+                android:layout_toEndOf="@id/time_icon">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/call_green"
+            android:layout_below="@id/time_layout"
+            android:layout_marginTop="10dp"
+            android:text="@string/call"
+            android:textAllCaps="false"
+            android:textColor="@color/white">
+
+        </Button>
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

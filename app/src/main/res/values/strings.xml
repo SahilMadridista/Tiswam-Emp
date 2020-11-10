@@ -90,4 +90,12 @@
     <string name="showing_meetings">Showing you your meetings of</string>
     <string name="today">Today\'s date</string>
 
+    // BDM meeting card
+
+    <string name="lead_org_name">Lead organization name</string>
+    <string name="lead_person_name">Lead person name</string>
+    <string name="address">Organization address</string>
+    <string name="time">Meeting time</string>
+    <string name="call">Make a call</string>
+
 </resources>

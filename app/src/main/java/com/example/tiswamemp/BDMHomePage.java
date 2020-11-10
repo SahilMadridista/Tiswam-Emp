@@ -15,12 +15,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class BDMHomePage extends AppCompatActivity {
 
@@ -39,12 +44,33 @@ public class BDMHomePage extends AppCompatActivity {
       setSupportActionBar(toolbar);
 
       Calendar calendar = Calendar.getInstance();
-      String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+      final String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
       TextView DateText = findViewById(R.id.today_date);
       DateText.setText(currentDate);
-      Toast.makeText(getApplicationContext(),currentDate,Toast.LENGTH_LONG).show();
 
-      showTodayMeetings(currentDate);
+      assert firebaseAuth.getCurrentUser() != null;
+      String userID = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
+
+      DocumentReference documentReference = firebaseFirestore.collection("Employees")
+              .document(userID);
+
+      documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+         @Override
+         public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+
+            if(task.isSuccessful()){
+               DocumentSnapshot documentSnapshot = task.getResult();
+               assert documentSnapshot != null;
+               String name = documentSnapshot.getString("name");
+               showTodayMeetings(currentDate,name);
+
+            }else{
+               Toast.makeText(getApplicationContext(),
+                       Objects.requireNonNull(task.getException()).getMessage(),Toast.LENGTH_SHORT).show();
+            }
+
+         }
+      });
 
    }
 
@@ -97,7 +123,7 @@ public class BDMHomePage extends AppCompatActivity {
       return true;
    }
 
-   private void showTodayMeetings(String currentDate) {
+   private void showTodayMeetings(String currentDate, String name) {
 
 
 
