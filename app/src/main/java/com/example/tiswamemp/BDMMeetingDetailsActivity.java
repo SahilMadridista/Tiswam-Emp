@@ -1,5 +1,6 @@
 package com.example.tiswamemp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -7,6 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.transition.AutoTransition;
 import android.transition.TransitionManager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,15 +18,16 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.Objects;
 
 public class BDMMeetingDetailsActivity extends AppCompatActivity {
 
     TextView BusinessName, BusinessAddress, LeadName, LeadEmail, LeadPhone, MeetingDate;
     TextView MeetingTime, ServicesPurchased, AssignedBDM, BDEName, BDEEmail, BDEPhone, PaymentMode, TotalAmount, PaidAmount, RemainingAmount;
-    RelativeLayout DeleteLeadLayout, ServicesLayout;
-    LinearLayout ButtonsLayout;
     CardView ServicesCard;
-    Button GoBackButton;
+    androidx.appcompat.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,10 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
         TotalAmount = findViewById(R.id.total_amount);
         PaidAmount = findViewById(R.id.paid_amount);
         RemainingAmount = findViewById(R.id.remaining_amount);*/
+
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
         Intent i = getIntent();
 
@@ -74,35 +83,7 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
         BDEPhone.setText(bde_phone);
         BDEEmail.setText(bde_email);
 
-        DeleteLeadLayout = findViewById(R.id.delete_lead_layout);
-        ServicesLayout = findViewById(R.id.client_want_services_layout);
-        ButtonsLayout = findViewById(R.id.btn_layout);
         ServicesCard = findViewById(R.id.services_offered_card);
-        GoBackButton = findViewById(R.id.go_back_btn);
-
-        ServicesLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                ServicesCard.setVisibility(View.VISIBLE);
-                GoBackButton.setVisibility(View.VISIBLE);
-                DeleteLeadLayout.setVisibility(View.GONE);
-                ServicesLayout.setVisibility(View.GONE);
-
-            }
-        });
-
-        GoBackButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                ServicesCard.setVisibility(View.GONE);
-                GoBackButton.setVisibility(View.GONE);
-                DeleteLeadLayout.setVisibility(View.VISIBLE);
-                ServicesLayout.setVisibility(View.VISIBLE);
-
-            }
-        });
 
         final LinearLayout expandableView = findViewById(R.id.expandableView);
         final RelativeLayout cardView = findViewById(R.id.cardView);
@@ -182,7 +163,50 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
             }
         });
 
+        final LinearLayout expandableView_advertising = findViewById(R.id.expandableView_advertising);
+        final Button expand_advertising = findViewById(R.id.expand_advertising);
+        expand_advertising.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                if (expandableView_advertising.getVisibility()==View.GONE){
+                    TransitionManager.beginDelayedTransition(cardView, new AutoTransition());
+                    expandableView_advertising.setVisibility(View.VISIBLE);
+                    expand_advertising.setBackgroundResource(R.drawable.ic_up);
+                } else {
+                    TransitionManager.beginDelayedTransition(cardView, new AutoTransition());
+                    expandableView_advertising.setVisibility(View.GONE);
+                    expand_advertising.setBackgroundResource(R.drawable.ic_down);
+                }
+
+            }
+        });
+
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.bdm_meeting_accept_reject_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.delete_lead:
+
+                Toast.makeText(getApplicationContext(),"Delete lead clicked",Toast.LENGTH_SHORT).show();
+                break;
+
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+        return true;
     }
 
 }
