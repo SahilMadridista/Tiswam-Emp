@@ -41,17 +41,10 @@
 
     <string name="new_lead">New lead</string>
 
-    <string-array name="posts">
-        <item>Select your team</item>
-        <item>Business Development Executive</item>
-        <item>Business Development Manager</item>
-        <item>IT Team</item>
-    </string-array>
+    <string name="newLead">Create new lead</string>
 
 
     // Menu items
-
-    <string name="newLead">Create new lead</string>
 
     <string name="profile">Profile</string>
 
@@ -61,11 +54,12 @@
 
     <string name="sign_out">Sign out</string>
 
-    // new lead activity
-
     <string name="cnl">Create New Lead</string>
 
+    // new lead activity
+
     <string name="lead_name">Lead\'s name</string>
+
     <string name="lead_email">Lead\'s email address</string>
     <string name="lead_phone">Lead\'s phone number</string>
     <string name="business_name">Business name</string>
@@ -73,29 +67,100 @@
     <string name="meeting_date">Meeting date</string>
     <string name="meeting_time">Meeting time</string>
     <string name="done">Done</string>
+    <string name="all_leads">All leads</string>
 
 
     // BDE home page
 
-    <string name="all_leads">All leads</string>
     <string name="search">Search</string>
     <string name="confirm_sign_out">Do you really want to sign out ?</string>
     <string name="confirm">Confirm</string>
+    <string name="calender">See meetings by date</string>
 
 
     // BDM home page
 
-    <string name="calender">See meetings by date</string>
     <string name="done_deals">My done deals</string>
     <string name="showing_meetings">Showing you your meetings of</string>
     <string name="today">Today\'s date</string>
+    <string name="lead_org_name">Lead organization name</string>
 
     // BDM meeting card
 
-    <string name="lead_org_name">Lead organization name</string>
     <string name="lead_person_name">Lead person name</string>
     <string name="address">Organization address</string>
     <string name="time">Meeting time</string>
     <string name="call">Make a call</string>
+    <string-array name="posts">
+        <item>Select your team</item>
+        <item>Business Development Executive</item>
+        <item>Business Development Manager</item>
+        <item>IT Team</item>
+    </string-array>
+
+
+
+    // BDM meeting details
+
+    <string name="business_details">Business details</string>
+    <string name="owner_details">Business owner\'s details</string>
+    <string name="date_time">Meeting date &amp; time</string>
+
+    <string name="bde_name">BDE name</string>
+    <string name="bde_email">BDE email</string>
+    <string name="bde_phone">BDE phone</string>
+
+    <string name="bde_details">Business development executive details</string>
+
+    <string name="no_meetings">No meetings found for today</string>
+    <string name="services">Services</string>
+    <string name="development_services">Development services</string>
+    <string name="go_back">Go back</string>
+
+
+    // Development services
+
+    <string name="website">Website development</string>
+    <string name="e_commerce">E-commerce development</string>
+    <string name="mobile_app">Mobile app development</string>
+    <string name="portal">Portal development</string>
+    <string name="graphics">Graphics designing</string>
+    <string name="google_business">Google business development</string>
+    <string name="mlm">MLM software</string>
+
+    // Management services
+
+    <string name="management_services">Management services</string>
+    <string name="school">School management</string>
+    <string name="crm">Customer relationship management</string>
+    <string name="hospital">Hospital management system</string>
+    <string name="hotel">Hotel management system</string>
+
+
+    // Marketing services
+
+    <string name="marketing">Marketing services</string>
+    <string name="social">Social media marketing</string>
+    <string name="sms">SMS marketing</string>
+    <string name="whatsapp">Whatsapp marketing</string>
+    <string name="email">Email marketing</string>
+
+    // telecom services
+
+    <string name="telecom">Telecom services</string>
+    <string name="c2c">C2C services</string>
+    <string name="telecon">Teleconferencing services</string>
+    <string name="ivr">IVR services</string>
+
+    // Advertising services
+
+    <string name="advertising">Advertising services</string>
+    <string name="online">Online advertising</string>
+    <string name="brand">Brand creation</string>
+    <string name="google_advertising">Google advertising</string>
+    <string name="facebook_promotion">Google promotion</string>
+    <string name="video">Video marketing</string>
+    <string name="voice">Voice SMS</string>
+    <string name="google_ads">Google ads</string>
 
 </resources>

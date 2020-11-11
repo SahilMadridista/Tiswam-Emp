@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BDMMeetingDetailsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/toolbar"
+        app:title="Meeting details"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@id/one"
+        android:id="@+id/cardView">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="5dp"
+                    android:visibility="gone"
+                    android:id="@+id/org_name_address_card">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="@string/business_details"
+                            android:id="@+id/b_d"
+                            android:gravity="center_vertical|start"
+                            android:background="@color/colorPrimaryDark"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="13sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lead_org_name"
+                            android:id="@+id/lead_org_text"
+                            android:textStyle="bold"
+                            android:layout_below="@id/b_d"
+                            android:textSize="25sp"
+                            android:paddingTop="5dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/address"
+                            android:id="@+id/lead_org_address"
+                            android:layout_below="@id/lead_org_text"
+                            android:paddingBottom="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="17sp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="5dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/org_name_address_card"
+                    android:id="@+id/business_owner_details">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="@string/owner_details"
+                            android:id="@+id/owner_details"
+                            android:gravity="center_vertical|start"
+                            android:background="@color/colorPrimaryDark"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="13sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lead_name"
+                            android:id="@+id/lead_name_text"
+                            android:textStyle="bold"
+                            android:layout_below="@id/owner_details"
+                            android:textSize="25sp"
+                            android:paddingTop="5dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lead_email"
+                            android:id="@+id/lead_email_text"
+                            android:layout_below="@id/lead_name_text"
+                            android:textSize="17sp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lead_phone"
+                            android:id="@+id/lead_phone_text"
+                            android:layout_below="@id/lead_email_text"
+                            android:paddingBottom="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="17sp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="5dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/business_owner_details"
+                    android:id="@+id/date_time_card">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="@string/date_time"
+                            android:id="@+id/d_t"
+                            android:gravity="center_vertical|start"
+                            android:background="@color/colorPrimaryDark"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="13sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lead_org_name"
+                            android:id="@+id/d_date_text"
+                            android:layout_below="@id/d_t"
+                            android:textSize="18sp"
+                            android:paddingTop="5dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/address"
+                            android:id="@+id/d_time_text"
+                            android:layout_below="@id/d_date_text"
+                            android:paddingBottom="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="18sp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/date_time_card"
+                    android:id="@+id/bde_details_card">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:text="@string/bde_details"
+                            android:id="@+id/bde_details"
+                            android:gravity="center_vertical|start"
+                            android:background="@color/colorPrimaryDark"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="13sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bde_name"
+                            android:id="@+id/bde_name_text"
+                            android:textStyle="bold"
+                            android:layout_below="@id/bde_details"
+                            android:textSize="25sp"
+                            android:paddingTop="5dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bde_email"
+                            android:id="@+id/bde_email_text"
+                            android:layout_below="@id/bde_name_text"
+                            android:textSize="17sp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/bde_phone"
+                            android:id="@+id/bde_phone_text"
+                            android:layout_below="@id/bde_email_text"
+                            android:paddingBottom="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textSize="17sp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp">
+
+                        </TextView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    app:cardCornerRadius="5dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_below="@id/bde_details_card"
+                    android:id="@+id/services_offered_card">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:text="@string/services"
+                            android:id="@+id/s_o"
+                            android:gravity="center_vertical|start"
+                            android:background="@color/colorPrimaryDark"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:textColor="@color/white"
+                            android:textSize="13sp">
+
+                        </TextView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dev_services_card"
+                            app:cardCornerRadius="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_below="@id/s_o">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/dev_services"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="17sp"
+                                    android:padding="15dp"
+                                    android:text="@string/development_services">
+
+                                </TextView>
+
+                                <Button
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="13dp"
+                                    android:id="@+id/expand"
+                                    android:background="@drawable/ic_down"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="20dp">
+
+                                </Button>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/expandableView"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    android:layout_below="@id/dev_services">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/website"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/e_commerce"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/mobile_app"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/portal"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/graphics"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/google_business"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="5dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/mlm"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/management_services_card"
+                            app:cardCornerRadius="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_below="@id/dev_services_card">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/management_services"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="17sp"
+                                    android:padding="15dp"
+                                    android:text="@string/management_services">
+
+                                </TextView>
+
+                                <Button
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="13dp"
+                                    android:id="@+id/expand_management"
+                                    android:background="@drawable/ic_down"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="20dp">
+
+                                </Button>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/expandableView_management"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    android:layout_below="@id/management_services">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/school"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/crm"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/hospital"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/hotel"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/marketing_services_card"
+                            app:cardCornerRadius="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_below="@id/management_services_card">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/marketing_services"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="17sp"
+                                    android:padding="15dp"
+                                    android:text="@string/marketing">
+
+                                </TextView>
+
+                                <Button
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="13dp"
+                                    android:id="@+id/expand_marketing"
+                                    android:background="@drawable/ic_down"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="20dp">
+
+                                </Button>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/expandableView_marketing"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    android:layout_below="@id/marketing_services">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/social"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/sms"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/whatsapp"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/email"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/telecom_services_card"
+                            app:cardCornerRadius="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_below="@id/marketing_services_card">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/telecom_services"
+                                    android:textColor="@color/dark_grey"
+                                    android:textSize="17sp"
+                                    android:padding="15dp"
+                                    android:text="@string/telecom">
+
+                                </TextView>
+
+                                <Button
+                                    android:layout_width="30dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="13dp"
+                                    android:id="@+id/expand_telecom"
+                                    android:background="@drawable/ic_down"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="20dp">
+
+                                </Button>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/expandableView_telecom"
+                                    android:orientation="vertical"
+                                    android:visibility="gone"
+                                    android:layout_below="@id/telecom_services">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/c2c"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/telecon"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/ivr"
+                                            android:textSize="15sp"
+                                            android:layout_centerVertical="true"
+                                            android:layout_marginStart="5dp"
+                                            android:paddingStart="10dp"
+                                            android:paddingEnd="5dp">
+
+                                        </TextView>
+
+                                        <CheckBox
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp">
+
+                                        </CheckBox>
+
+                                    </RelativeLayout>
+
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/silver"
+        android:id="@+id/one"
+        android:layout_above="@id/btn_layout">
+
+    </View>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_layout"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:id="@+id/delete_lead_layout"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_delete"
+                android:layout_centerInParent="true">
+
+            </ImageView>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/silver">
+
+        </View>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:id="@+id/client_want_services_layout">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check"
+                android:layout_centerInParent="true">
+
+            </ImageView>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/go_back"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:id="@+id/go_back_btn">
+
+        </Button>
+
+    </LinearLayout>
+
+</RelativeLayout>

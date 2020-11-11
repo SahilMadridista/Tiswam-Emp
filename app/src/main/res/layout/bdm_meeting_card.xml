@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_margin="3sp"
+     android:layout_margin="5dp"
     android:layout_height="wrap_content">
 
     <RelativeLayout
@@ -33,7 +33,6 @@
             android:gravity="start"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:paddingTop="5dp"
             android:text="@string/address"
             android:textColor="@color/dark_grey">
 
@@ -41,13 +40,13 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:id="@+id/lead_name"
+            android:layout_height="wrap_content"
+            android:id="@+id/bdm_card_lead_name"
             android:layout_below="@id/org_address"
             android:textSize="13sp"
-            android:gravity="center_vertical|start"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
+            android:paddingTop="2dp"
             android:text="@string/lead_person_name"
             android:textColor="@color/dark_grey">
 
@@ -56,9 +55,10 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/lead_name"
+            android:layout_below="@id/bdm_card_lead_name"
             android:layout_marginStart="7dp"
             android:layout_marginEnd="7dp"
+            android:layout_marginTop="3dp"
             android:id="@+id/time_layout">
 
             <ImageView
@@ -75,6 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:id="@+id/meeting_time"
                 android:text="@string/time"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
@@ -87,10 +88,11 @@
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
+            android:id="@+id/call_button"
             android:background="@color/call_green"
             android:layout_below="@id/time_layout"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="@string/call"
             android:textAllCaps="false"
             android:textColor="@color/white">

@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewLeadActivity"></activity>
+        <activity android:name=".BDMMeetingDetailsActivity"
+            android:parentActivityName=".BDMHomePage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NewLeadActivity" />
         <activity android:name=".ITHomePage" />
         <activity android:name=".BDMHomePage" />
         <activity android:name=".BDEHomePage" />
@@ -24,8 +27,8 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

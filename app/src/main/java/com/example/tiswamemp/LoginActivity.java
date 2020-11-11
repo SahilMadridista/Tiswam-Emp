@@ -117,8 +117,6 @@ public class LoginActivity extends AppCompatActivity {
 
                        if(Objects.requireNonNull(firebaseAuth.getCurrentUser()).isEmailVerified()){
 
-                          Toast.makeText(LoginActivity.this,"You are logged in",
-                                  Toast.LENGTH_LONG).show();
                           enableWidgets();
                           checkPost();
 
