@@ -39,7 +39,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:visibility="gone"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
                     android:id="@+id/org_name_address_card">
@@ -101,7 +100,6 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
-                    android:visibility="gone"
                     android:layout_below="@id/org_name_address_card"
                     android:id="@+id/business_owner_details">
 
@@ -174,7 +172,6 @@
                     android:layout_marginEnd="5dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
-                    android:visibility="gone"
                     android:layout_below="@id/business_owner_details"
                     android:id="@+id/date_time_card">
 
@@ -235,7 +232,6 @@
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
                     android:layout_marginBottom="5dp"
-                    android:visibility="gone"
                     android:layout_below="@id/date_time_card"
                     android:id="@+id/bde_details_card">
 
@@ -1030,7 +1026,7 @@
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="5dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginBottom="10dp"
                             android:layout_below="@id/telecom_services_card">
 
                             <RelativeLayout
@@ -1269,7 +1265,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
@@ -1280,7 +1276,7 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="wrap_content">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -1300,18 +1296,96 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/p_d"
+                            android:padding="10dp"
+                            android:layout_marginTop="10dp"
                             android:id="@+id/payment_mode_spinner">
 
                         </Spinner>
 
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/total_amount_layout"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_below="@id/payment_mode_spinner">
 
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/total_amount_et"
+                                android:hint="@string/total"
+                                android:inputType="number"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:digits="0123456789">
 
+                            </EditText>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/paid_amount_layout"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_below="@id/total_amount_layout">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/paid_amount_et"
+                                android:hint="@string/paid"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:inputType="number"
+                                android:digits="0123456789">
+
+                            </EditText>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/remaining_amount_layout"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_below="@id/paid_amount_layout">
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:id="@+id/remaining_amount_et"
+                                android:hint="@string/remaining"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp"
+                                android:inputType="number"
+                                android:digits="0123456789">
+
+                            </EditText>
+
+                        </com.google.android.material.textfield.TextInputLayout>
 
                     </RelativeLayout>
 
-
-
                 </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimaryDark"
+                    android:layout_below="@id/payment_details_card"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/done"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false">
+
+                </Button>
 
             </RelativeLayout>
 

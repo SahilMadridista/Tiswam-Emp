@@ -14,9 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,9 +27,10 @@ import java.util.Objects;
 public class BDMMeetingDetailsActivity extends AppCompatActivity {
 
     TextView BusinessName, BusinessAddress, LeadName, LeadEmail, LeadPhone, MeetingDate;
-    TextView MeetingTime, ServicesPurchased, AssignedBDM, BDEName, BDEEmail, BDEPhone, PaymentMode, TotalAmount, PaidAmount, RemainingAmount;
+    TextView MeetingTime, BDEName, BDEEmail, BDEPhone, PaymentMode, TotalAmount, PaidAmount, RemainingAmount;
     CardView ServicesCard;
     androidx.appcompat.widget.Toolbar toolbar;
+    Spinner PaymentModeSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +47,19 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
         BDEName = findViewById(R.id.bde_name_text);
         BDEEmail = findViewById(R.id.bde_email_text);
         BDEPhone = findViewById(R.id.bde_phone_text);
+
         /*PaymentMode = findViewById(R.id.payment_mode);
         TotalAmount = findViewById(R.id.total_amount);
         PaidAmount = findViewById(R.id.paid_amount);
         RemainingAmount = findViewById(R.id.remaining_amount);*/
+
+        PaymentModeSpinner  = findViewById(R.id.payment_mode_spinner);
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.mode, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        PaymentModeSpinner.setAdapter(adapter);
+
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

@@ -175,10 +175,14 @@
 
         <item>Payment mode</item>
         <item>Cash</item>
-        <item>Online transfer</item>
+        <item>Online money transfer</item>
         <item>Cheque</item>
 
-
     </string-array>
+
+    <string name="total">Total amount</string>
+    <string name="paid">Paid amount</string>
+    <string name="remaining">Remaining amount</string>
+
 
 </resources>
