@@ -151,7 +151,7 @@
     <string name="online">Online advertising</string>
     <string name="brand">Brand creation</string>
     <string name="google_advertising">Google advertising</string>
-    <string name="facebook_promotion">Google promotion</string>
+    <string name="facebook_promotion">Facebook promotion</string>
     <string name="video">Video marketing</string>
     <string name="voice">Voice SMS</string>
     <string name="google_ads">Google ads</string>
@@ -183,6 +183,7 @@
     <string name="total">Total amount</string>
     <string name="paid">Paid amount</string>
     <string name="remaining">Remaining amount</string>
+    <string name="remaining_head">Remaining amount : </string>
 
 
 </resources>

@@ -63,6 +63,12 @@ public class BDMHomePage extends AppCompatActivity {
       final String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
       TextView DateText = findViewById(R.id.today_date);
       DateText.setText(currentDate);
+      DateText.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+            startActivity(new Intent(getApplicationContext(),TestActivity.class));
+         }
+      });
 
       assert firebaseAuth.getCurrentUser() != null;
       String userID = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();

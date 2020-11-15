@@ -11,8 +11,21 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/test_recyclerview">
+        android:id="@+id/test_recyclerview"
+        android:layout_margin="3dp">
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"
+        android:background="@color/colorPrimaryDark"
+        android:layout_alignParentBottom="true"
+        android:text="@string/done"
+        android:textAllCaps="false"
+        android:textColor="@color/white">
+
+    </Button>
 
 </RelativeLayout>

@@ -6,12 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.tiswamemp.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+
+import java.util.ArrayList;
 
 public class TestAdapter extends FirestoreRecyclerAdapter<Test,TestAdapter.TestViewHolder> {
 
@@ -23,6 +24,7 @@ public class TestAdapter extends FirestoreRecyclerAdapter<Test,TestAdapter.TestV
 
    @Override
    protected void onBindViewHolder(@NonNull TestViewHolder holder, int position, @NonNull Test model) {
+      holder.ServiceName.setText(model.getName());
 
    }
 
@@ -35,7 +37,7 @@ public class TestAdapter extends FirestoreRecyclerAdapter<Test,TestAdapter.TestV
       return new TestViewHolder(v);
    }
 
-   static class TestViewHolder extends RecyclerView.ViewHolder{
+   static class TestViewHolder extends RecyclerView.ViewHolder {
 
       TextView ServiceName;
       CheckBox checkbox;

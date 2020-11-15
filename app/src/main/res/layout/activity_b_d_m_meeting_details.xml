@@ -37,8 +37,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
                     android:id="@+id/org_name_address_card">
@@ -96,8 +96,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
                     android:layout_below="@id/org_name_address_card"
@@ -168,8 +168,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
                     android:layout_below="@id/business_owner_details"
@@ -227,8 +227,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
                     android:layout_marginBottom="5dp"
@@ -300,8 +300,8 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
                     android:layout_marginBottom="10dp"
@@ -310,19 +310,20 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimaryDark">
 
                         <TextView
                             android:layout_width="match_parent"
-                            android:layout_height="35dp"
+                            android:layout_height="50dp"
                             android:text="@string/services"
                             android:id="@+id/s_o"
                             android:gravity="center_vertical|start"
                             android:background="@color/colorPrimaryDark"
-                            android:paddingStart="5dp"
+                            android:paddingStart="10dp"
                             android:paddingEnd="5dp"
                             android:textColor="@color/white"
-                            android:textSize="13sp">
+                            android:textSize="17sp">
 
                         </TextView>
 
@@ -391,6 +392,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/website_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -418,6 +420,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/e_commerce_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -445,6 +448,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/mobile_app_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -472,6 +476,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/portal_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -499,6 +504,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/graphics_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -526,6 +532,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/google_busi_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -554,6 +561,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/mlm_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -632,6 +640,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/school_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -659,6 +668,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/crm_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -686,6 +696,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/hospital_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -713,6 +724,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/hotel_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -791,6 +803,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/social_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -818,6 +831,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/sms_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -845,6 +859,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/whatsapp_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -872,6 +887,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/email_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -893,7 +909,7 @@
                             android:layout_marginStart="5dp"
                             android:layout_marginEnd="5dp"
                             android:layout_marginTop="5dp"
-                            android:layout_marginBottom="10dp"
+                            android:layout_marginBottom="5dp"
                             android:layout_below="@id/marketing_services_card">
 
                             <RelativeLayout
@@ -950,6 +966,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/c2c_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -977,6 +994,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/teleconferencing_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1004,6 +1022,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/ivr_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1040,7 +1059,7 @@
                                     android:textColor="@color/dark_grey"
                                     android:textSize="17sp"
                                     android:padding="15dp"
-                                    android:text="@string/development_services">
+                                    android:text="@string/advertising">
 
                                 </TextView>
 
@@ -1083,6 +1102,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/online_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1110,6 +1130,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/brand_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1137,6 +1158,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/google_adver_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1164,6 +1186,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/fb_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1191,6 +1214,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/video_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1218,6 +1242,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/voice_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1246,6 +1271,7 @@
                                         <CheckBox
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
+                                            android:id="@+id/google_ads_checkbox"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp">
 
@@ -1267,8 +1293,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginTop="10dp"
                     app:cardCornerRadius="5dp"
                     android:id="@+id/payment_details_card"
@@ -1302,60 +1328,70 @@
 
                         </Spinner>
 
-                        <com.google.android.material.textfield.TextInputLayout
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/total_amount_layout"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
+                            android:orientation="horizontal"
+                            android:id="@+id/total_paid"
+                            android:layout_marginTop="5dp"
                             android:layout_below="@id/payment_mode_spinner">
 
-                            <EditText
-                                android:layout_width="match_parent"
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/total_amount_et"
-                                android:hint="@string/total"
-                                android:inputType="number"
-                                android:paddingStart="10dp"
-                                android:paddingEnd="10dp"
-                                android:digits="0123456789">
+                                android:layout_weight="1"
+                                android:id="@+id/total_amount_layout"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp">
 
-                            </EditText>
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/total_amount_et"
+                                    android:hint="@string/total"
+                                    android:inputType="number"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:digits="0123456789">
 
-                        </com.google.android.material.textfield.TextInputLayout>
+                                </EditText>
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/paid_amount_layout"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_below="@id/total_amount_layout">
+                            </com.google.android.material.textfield.TextInputLayout>
 
-                            <EditText
-                                android:layout_width="match_parent"
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:id="@+id/paid_amount_et"
-                                android:hint="@string/paid"
-                                android:paddingStart="10dp"
-                                android:paddingEnd="10dp"
-                                android:inputType="number"
-                                android:digits="0123456789">
+                                android:layout_weight="1"
+                                android:id="@+id/paid_amount_layout"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp">
 
-                            </EditText>
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/paid_amount_et"
+                                    android:hint="@string/paid"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:inputType="number"
+                                    android:digits="0123456789">
 
-                        </com.google.android.material.textfield.TextInputLayout>
+                                </EditText>
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                        </LinearLayout>
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/remaining_amount_layout"
                             android:layout_marginTop="5dp"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginEnd="10dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
                             android:layout_marginBottom="10dp"
-                            android:layout_below="@id/paid_amount_layout">
+                            android:layout_below="@id/total_paid">
 
                             <EditText
                                 android:layout_width="match_parent"
@@ -1380,8 +1416,9 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimaryDark"
                     android:layout_below="@id/payment_details_card"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="@string/done"
+                    android:id="@+id/add_services_button"
                     android:textColor="@color/white"
                     android:textAllCaps="false">
 
