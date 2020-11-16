@@ -162,15 +162,20 @@
     <string name="delete_lead">Delete this lead</string>
     <string name="payment_details">Payment details</string>
 
+    <string name="total">Total amount</string>
+
+    // Payment details
+
+    <string name="paid">Paid amount</string>
+
+    <string name="remaining">Remaining amount</string>
+    <string name="remaining_head">Remaining amount : </string>
     <string-array name="posts">
         <item>Select your team</item>
         <item>Business Development Executive</item>
         <item>Business Development Manager</item>
         <item>IT Team</item>
     </string-array>
-
-    // Payment details
-
     <string-array name="mode">
 
         <item>Payment mode</item>
@@ -179,11 +184,6 @@
         <item>Cheque</item>
 
     </string-array>
-
-    <string name="total">Total amount</string>
-    <string name="paid">Paid amount</string>
-    <string name="remaining">Remaining amount</string>
-    <string name="remaining_head">Remaining amount : </string>
 
 
 </resources>
