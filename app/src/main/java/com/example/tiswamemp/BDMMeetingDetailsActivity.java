@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.Voice;
@@ -48,7 +50,7 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
     CheckBox C2CCheckbox, TeleconferencingCheckbox, IVRCheckbox;
     CheckBox OnlineCheckbox, BrandCheckbox, GoogleAdvertisingCheckbox, FBCheckbox, VideoCheckbox, VoiceCheckbox, GoogleAdsCheckbox;
     Button DoneButton;
-    String id,business;
+    String id, business, phone;
     EditText TotalAmount, PaidAmount, RemainingAmount;
 
 
@@ -101,7 +103,7 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
         business = i.getStringExtra("org");
         String address = i.getStringExtra("address");
         String name = i.getStringExtra("name");
-        String phone = i.getStringExtra("phone");
+        phone = i.getStringExtra("phone");
         String email = i.getStringExtra("email");
         String date = i.getStringExtra("date");
         String time = i.getStringExtra("time");
@@ -294,7 +296,7 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Uploading details...");
+        progressDialog.setMessage("Adding services...");
 
         ArrayList<String> ServicesList = new ArrayList<>();
 
@@ -437,6 +439,8 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Void aVoid) {
 
+                    progressDialog.setMessage("Uploading payment details...");
+
                 }
             });
 
@@ -458,7 +462,6 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),BDMHomePage.class));
                 finish();
                 Toast.makeText(getApplicationContext(),"Deal done with " + business,Toast.LENGTH_SHORT).show();
-
                 progressDialog.dismiss();
 
             }
@@ -473,7 +476,6 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -484,18 +486,45 @@ public class BDMMeetingDetailsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()) {
+        if (item.getItemId() == R.id.delete_lead) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-            case R.id.delete_lead:
+            builder.setMessage("Do you really want to delete this lead's details ?").setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(final DialogInterface dialogInterface, int i) {
 
-                Toast.makeText(getApplicationContext(),"Delete lead clicked",Toast.LENGTH_SHORT).show();
-                break;
+                            firebaseFirestore.collection("Leads").document(id)
+                                    .delete()
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            dialogInterface.cancel();
+                                            startActivity(new Intent(getApplicationContext(), BDMHomePage.class));
+                                            Toast.makeText(getApplicationContext(), "Lead deleted", Toast.LENGTH_SHORT).show();
+                                            finish();
+                                        }
+                                    }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    dialogInterface.cancel();
+                                }
+                            });
 
-            default:
-                return super.onOptionsItemSelected(item);
+                        }
+                    }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    dialogInterface.cancel();
+                }
+            });
 
+            AlertDialog alert = builder.create();
+            alert.show();
         }
-        return true;
+
+        return super.onOptionsItemSelected(item);
+
     }
 
 }
