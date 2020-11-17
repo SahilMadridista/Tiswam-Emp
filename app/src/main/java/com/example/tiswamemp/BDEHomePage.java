@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.tiswamemp.Profiles.BDEProfileActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -84,7 +85,7 @@ public class BDEHomePage extends AppCompatActivity {
 
          case R.id.profile:
 
-            Toast.makeText(getApplicationContext(),"Profile button clicked",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), BDEProfileActivity.class));
             break;
 
          case R.id.lead:

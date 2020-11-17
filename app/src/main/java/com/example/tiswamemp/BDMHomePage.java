@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tiswamemp.Profiles.BDMProfileActivity;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -110,7 +111,7 @@ public class BDMHomePage extends AppCompatActivity {
 
          case R.id.bdm_profile:
 
-            Toast.makeText(getApplicationContext(),"Profile button clicked",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), BDMProfileActivity.class));
             break;
 
          case R.id.schedule:

@@ -170,6 +170,19 @@
 
     <string name="remaining">Remaining amount</string>
     <string name="remaining_head">Remaining amount : </string>
+    <string name="your_name">Name</string>
+    <string name="your_email">Email</string>
+
+    // Profile
+
+    <string name="your_phone">Phone</string>
+    <string name="designation">Designation</string>
+    <string name="change_pass">Change password</string>
+    <string name="bde">Business development executive</string>
+    <string name="bdm">Business development manager</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_pass">Enter new password</string>
+    <string name="new_pass_again">Enter new password again</string>
     <string-array name="posts">
         <item>Select your team</item>
         <item>Business Development Executive</item>
