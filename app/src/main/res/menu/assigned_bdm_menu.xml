@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+
+        android:id="@+id/show_all_leads"
+        android:title="@string/show_all">
+
+    </item>
+
+    <item
+
+        android:id="@+id/show_done_deals"
+        android:title="@string/show_done_deals">
+
+    </item>
+
+    <item
+
+        android:id="@+id/show_done_deals_with_date"
+        android:title="@string/done_deals_with_date">
+
+    </item>
+
+    <item
+
+        android:id="@+id/show_pending_deals"
+        android:title="@string/show_all_pending_deals">
+
+    </item>
+
+    <item
+
+        android:id="@+id/remove_date"
+        android:title="@string/remove_date">
+
+    </item>
+
+</menu>

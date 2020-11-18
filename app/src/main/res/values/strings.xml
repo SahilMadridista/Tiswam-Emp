@@ -183,6 +183,19 @@
     <string name="cancel">Cancel</string>
     <string name="new_pass">Enter new password</string>
     <string name="new_pass_again">Enter new password again</string>
+    <string name="select_date">Select date</string>
+    <string name="showing_all_leads">Showing all leads</string>
+
+    // Assigned BDM
+
+    <string name="show_done_deals">Show all closed deals</string>
+    <string name="done_deals_with_date">Sort closed deals with date</string>
+    <string name="show_all_pending_deals">Show all pending deals</string>
+    <string name="pending_deals_with_date">Sort pending deals with date</string>
+
+    <string name="remove_date">Remove date filter</string>
+    <string name="show_all">Show all leads</string>
+
     <string-array name="posts">
         <item>Select your team</item>
         <item>Business Development Executive</item>
@@ -197,6 +210,12 @@
         <item>Cheque</item>
 
     </string-array>
+
+    // Meeitng details
+
+    <string name="bdm_name">BDM</string>
+    <string name="mode">Payment mode</string>
+    <string name="amount">Amount</string>
 
 
 </resources>

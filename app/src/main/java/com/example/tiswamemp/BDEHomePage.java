@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.tiswamemp.BDEAssignedBDM.BDEAssignedBDMActivity;
 import com.example.tiswamemp.Profiles.BDEProfileActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -90,9 +91,8 @@ public class BDEHomePage extends AppCompatActivity {
 
          case R.id.lead:
 
-            Toast.makeText(getApplicationContext(),"Leads button clicked",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), BDEAssignedBDMActivity.class));
             break;
-
 
          case R.id.sales:
 

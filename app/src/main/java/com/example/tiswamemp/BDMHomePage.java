@@ -163,10 +163,7 @@ public class BDMHomePage extends AppCompatActivity {
                showSnackBar(snack);
 
             }
-
             LoadingLayout.setVisibility(View.GONE);
-
-
          }
       });
 

@@ -3,6 +3,9 @@ package com.example.tiswamemp.Profiles;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,12 +17,16 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.tiswamemp.R;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
 
 public class BDEProfileActivity extends AppCompatActivity {
 
@@ -84,9 +91,15 @@ public class BDEProfileActivity extends AppCompatActivity {
          }
       });
 
+
+      final ProgressDialog progressDialog = new ProgressDialog(this);
+
       Done.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
+
+            progressDialog.setCancelable(false);
+            progressDialog.setMessage("Changing password...");
 
             String one = PasswordOne.getText().toString().trim();
             String two = PasswordTwo.getText().toString().trim();
@@ -111,7 +124,34 @@ public class BDEProfileActivity extends AppCompatActivity {
                return;
             }
 
-            Toast.makeText(getApplicationContext(),"It worked",Toast.LENGTH_SHORT).show();
+            progressDialog.show();
+
+            firebaseAuth.getCurrentUser().updatePassword(one).addOnCompleteListener(new OnCompleteListener<Void>() {
+               @Override
+               public void onComplete(@NonNull Task<Void> task) {
+
+                  if(task.isSuccessful()){
+
+                     progressDialog.dismiss();
+                     PasswordTwo.setText(null);
+                     PasswordOne.setText(null);
+                     ChangePassCard.setVisibility(View.GONE);
+                     Details.setVisibility(View.VISIBLE);
+                     Toast.makeText(getApplicationContext(),"Password changed",Toast.LENGTH_SHORT).show();
+
+                  }
+
+                  else{
+
+                     Toast.makeText(getApplicationContext(),
+                             Objects.requireNonNull(task.getException()).getMessage()
+                             ,Toast.LENGTH_SHORT).show();
+                     progressDialog.dismiss();
+
+                  }
+
+               }
+            });
 
 
          }
