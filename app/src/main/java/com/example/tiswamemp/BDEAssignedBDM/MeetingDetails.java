@@ -136,7 +136,6 @@ public class MeetingDetails extends AppCompatActivity {
 
         toolbar = findViewById(R.id.meeting_details_head);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
     }
 
