@@ -34,6 +34,7 @@ public class AssignedBDMAdapter extends FirestoreRecyclerAdapter<Lead,AssignedBD
       holder.Date.setText(model.getMeeting_date());
       holder.BDMName.setText(model.getBdm());
 
+
       holder.itemView.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
@@ -56,6 +57,7 @@ public class AssignedBDMAdapter extends FirestoreRecyclerAdapter<Lead,AssignedBD
             String total = snapshot.getString("deal_amount");
             String advance = snapshot.getString("advance_amount");
             String remaining = snapshot.getString("remaining_amount");
+            String deal_status = snapshot.getString("deal_status");
 
             Intent i = new Intent(context,MeetingDetails.class);
 
@@ -75,6 +77,17 @@ public class AssignedBDMAdapter extends FirestoreRecyclerAdapter<Lead,AssignedBD
             i.putExtra("total",total);
             i.putExtra("advance",advance);
             i.putExtra("remaining",remaining);
+
+            assert deal_status != null;
+
+            if(deal_status.equals("pending")){
+               i.putExtra("key","0");
+            }
+            if(deal_status.equals("done")){
+               i.putExtra("key","1");
+            }
+
+
 
             context.startActivity(i);
 

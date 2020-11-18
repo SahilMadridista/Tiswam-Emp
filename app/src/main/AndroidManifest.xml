@@ -9,8 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BDEAssignedBDM.MeetingDetails"></activity>
-        <activity android:name=".BDEAssignedBDM.BDEAssignedBDMActivity" />
+        <activity android:name=".BDMDeals.BDMDoneDeals"
+            android:parentActivityName=".BDMHomePage"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".BDEAssignedBDM.MeetingDetails"
+            android:parentActivityName=".BDEAssignedBDM.BDEAssignedBDMActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BDEAssignedBDM.BDEAssignedBDMActivity"
+            android:parentActivityName=".BDEHomePage"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Profiles.BDMProfileActivity"
             android:parentActivityName=".BDMHomePage"
@@ -39,9 +48,9 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

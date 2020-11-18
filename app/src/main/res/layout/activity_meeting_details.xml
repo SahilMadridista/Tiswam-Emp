@@ -228,6 +228,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/services_card"
+                android:visibility="gone"
                 android:layout_below="@id/part_one"
                 android:layout_margin="10dp">
 
@@ -257,7 +258,7 @@
                         android:textColor="@color/dark_grey"
                         android:padding="10dp"
                         android:gravity="start"
-                        android:background="@color/extra_light_grey">
+                        android:background="@color/white">
 
                     </TextView>
 
@@ -307,8 +308,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/bdm_name"
+                        android:background="@color/white"
+                        android:layout_marginTop="5dp"
                         android:textColor="@color/dark_grey"
                         android:textSize="30sp"
+                        android:layout_marginBottom="10dp"
                         android:layout_below="@id/bdm_assigned"
                         android:layout_marginStart="10dp"
                         android:id="@+id/bdm_name">
@@ -334,35 +338,33 @@
 
             </View>
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/bde"
-                android:layout_marginStart="10dp"
-                android:textStyle="bold"
-                android:id="@+id/lead_created_by"
-                android:textColor="@color/dark_grey"
-                android:layout_below="@id/part_three"
-                android:layout_marginTop="10dp"
-                android:textSize="15sp">
-
-            </TextView>
-
-            <androidx.cardview.widget.CardView
+            <!--<androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:id="@+id/lead_created_by_card"
+                android:id="@+id/bde_card"
                 app:cardCornerRadius="5dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/lead_created_by">
+                android:layout_below="@id/part_three">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/extra_light_grey">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bde"
+                        android:layout_marginStart="10dp"
+                        android:textStyle="bold"
+                        android:id="@+id/lead_created_by"
+                        android:textColor="@color/dark_grey"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp">
+
+                    </TextView>
 
                     <ImageView
                         android:layout_width="30dp"
@@ -370,6 +372,7 @@
                         android:id="@+id/bde_name_icon"
                         android:src="@drawable/ic_name_color"
                         android:layout_marginTop="10dp"
+                        android:layout_below="@+id/lead_created_by"
                         android:layout_marginStart="10dp">
 
                     </ImageView>
@@ -379,6 +382,7 @@
                         android:layout_height="30dp"
                         android:gravity="center"
                         android:id="@+id/bde_name_text"
+                        android:layout_below="@+id/lead_created_by"
                         android:layout_marginStart="10dp"
                         android:textColor="@color/dark_grey"
                         android:text="@string/bde_name"
@@ -440,30 +444,19 @@
 
                 </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>
+            </androidx.cardview.widget.CardView>-->
 
-            <View
-
-                android:layout_width="match_parent"
-                android:layout_height="0.3dp"
-                android:background="@color/silver"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:id="@+id/part_four"
-                android:layout_below="@id/lead_created_by_card"
-                android:layout_marginTop="10dp">
-
-            </View>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="5dp"
                 android:id="@+id/payments_card"
+                android:visibility="gone"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:layout_below="@id/part_four"
+                android:layout_below="@id/part_three"
                 android:layout_marginStart="10dp">
 
                 <RelativeLayout
@@ -557,8 +550,6 @@
                                     android:textColor="@color/dark_grey">
 
                                 </TextView>
-
-
 
                             </LinearLayout>
 
@@ -654,11 +645,21 @@
 
                 </RelativeLayout>
 
-
             </androidx.cardview.widget.CardView>
 
+            <TextView
 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nan_text"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="20dp"
+                android:text="@string/nan"
+                android:padding="10dp"
+                android:gravity="center"
+                android:layout_below="@id/payments_card">
 
+            </TextView>
 
         </RelativeLayout>
 

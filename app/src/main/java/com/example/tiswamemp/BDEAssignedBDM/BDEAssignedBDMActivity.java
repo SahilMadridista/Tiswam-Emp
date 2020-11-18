@@ -42,6 +42,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class BDEAssignedBDMActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
@@ -66,6 +67,7 @@ public class BDEAssignedBDMActivity extends AppCompatActivity implements DatePic
 
       toolbar = findViewById(R.id.head_text);
       setSupportActionBar(toolbar);
+      Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
 
       fetchBDEName();
 
@@ -236,6 +238,13 @@ public class BDEAssignedBDMActivity extends AppCompatActivity implements DatePic
             showPendingDeals(name);
             Toast.makeText(getApplicationContext(),"Showing pending deals",Toast.LENGTH_SHORT).show();
             break;
+
+         case R.id.remove_date:
+
+            showAllLeads(name);
+            Toast.makeText(getApplicationContext(),"Date filter removed and showing all leads.",Toast.LENGTH_SHORT).show();
+            break;
+
 
          default:
             return super.onOptionsItemSelected(item);

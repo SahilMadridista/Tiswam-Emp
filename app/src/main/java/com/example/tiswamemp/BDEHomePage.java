@@ -94,12 +94,6 @@ public class BDEHomePage extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), BDEAssignedBDMActivity.class));
             break;
 
-         case R.id.sales:
-
-            Toast.makeText(getApplicationContext(),"Sales button clicked",Toast.LENGTH_SHORT).show();
-            break;
-
-
          case R.id.sign_out:
 
             SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
@@ -111,7 +105,6 @@ public class BDEHomePage extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
 
-            Toast.makeText(getApplicationContext(),"Sign out button clicked",Toast.LENGTH_SHORT).show();
 
          default:
             return super.onOptionsItemSelected(item);

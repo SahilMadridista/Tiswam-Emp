@@ -196,12 +196,20 @@
     <string name="remove_date">Remove date filter</string>
     <string name="show_all">Show all leads</string>
 
+    <string name="bdm_name">BDM</string>
+    <string name="mode">Payment mode :</string>
+
+    // Meeitng details
+
+    <string name="amount">Amount</string>
+    <string name="nan">The meeting has not been made between the business development manager and the client yet.</string>
     <string-array name="posts">
         <item>Select your team</item>
         <item>Business Development Executive</item>
         <item>Business Development Manager</item>
         <item>IT Team</item>
     </string-array>
+
     <string-array name="mode">
 
         <item>Payment mode</item>
@@ -211,11 +219,8 @@
 
     </string-array>
 
-    // Meeitng details
-
-    <string name="bdm_name">BDM</string>
-    <string name="mode">Payment mode</string>
-    <string name="amount">Amount</string>
+    <string name="make_call">Call</string>
+    <string name="make_email">Email</string>
 
 
 </resources>
