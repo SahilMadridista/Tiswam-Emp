@@ -36,9 +36,9 @@ public class MeetingDetails extends AppCompatActivity {
 
     androidx.appcompat.widget.Toolbar toolbar;
     TextView BusinessName, BusinessAddress, LeadName, LeadEmail, LeadPhone, MeetingDate;
-    TextView MeetingTime, ServicesPurchased, AssignedBDM,PaymentMode, TotalAmount, PaidAmount, RemainingAmount;
+    TextView MeetingTime, ServicesPurchased, AssignedBDM,PaymentMode,BDEName, BDEEmail, BDEPhone, TotalAmount, PaidAmount, RemainingAmount;
     FirebaseFirestore firebaseFirestore;
-    CardView ServicesCard, PaymentsCard;
+    CardView ServicesCard, PaymentsCard, BDMCard, BDECard;
     TextView NanText;
     private static final int REQUEST_PHONE_CALL = 1;
 
@@ -62,9 +62,9 @@ public class MeetingDetails extends AppCompatActivity {
 
         NanText = findViewById(R.id.nan_text);
 
-        /*BDEName = findViewById(R.id.bde_name_text);
+        BDEName = findViewById(R.id.bde_name_text);
         BDEEmail = findViewById(R.id.bde_email_text);
-        BDEPhone = findViewById(R.id.bde_phone_text);*/
+        BDEPhone = findViewById(R.id.bde_phone_text);
 
         PaymentMode = findViewById(R.id.payment_mode);
         TotalAmount = findViewById(R.id.total_amount);
@@ -73,6 +73,8 @@ public class MeetingDetails extends AppCompatActivity {
 
         ServicesCard = findViewById(R.id.services_card);
         PaymentsCard = findViewById(R.id.payments_card);
+        BDMCard = findViewById(R.id.bdm_card);
+        BDECard = findViewById(R.id.bde_card);
 
         Intent i = getIntent();
 
@@ -85,9 +87,9 @@ public class MeetingDetails extends AppCompatActivity {
         String date = i.getStringExtra("date");
         String time = i.getStringExtra("time");
 
-        /*String bde_name = i.getStringExtra("bde_name");
+        String bde_name = i.getStringExtra("bde_name");
         String bde_phone = i.getStringExtra("bde_phone");
-        String bde_email = i.getStringExtra("bde_email");*/
+        String bde_email = i.getStringExtra("bde_email");
 
         String bdm = i.getStringExtra("bdm");
         String mode = i.getStringExtra("mode");
@@ -95,6 +97,7 @@ public class MeetingDetails extends AppCompatActivity {
         String advance = i.getStringExtra("advance");
         String remaining = i.getStringExtra("remaining");
         String key = i.getStringExtra("key");
+        String key2 = i.getStringExtra("key2");
 
         assert key != null;
 
@@ -102,6 +105,13 @@ public class MeetingDetails extends AppCompatActivity {
             ServicesCard.setVisibility(View.VISIBLE);
             PaymentsCard.setVisibility(View.VISIBLE);
             NanText.setVisibility(View.GONE);
+        }
+
+        assert key2 != null;
+
+        if(key2.equals("bdm")){
+            BDMCard.setVisibility(View.GONE);
+            BDECard.setVisibility(View.VISIBLE);
         }
 
         BusinessName.setText(business);
@@ -112,9 +122,9 @@ public class MeetingDetails extends AppCompatActivity {
         MeetingDate.setText(date);
         MeetingTime.setText(time);
 
-        /*BDEName.setText(bde_name);
+        BDEName.setText(bde_name);
         BDEPhone.setText(bde_phone);
-        BDEEmail.setText(bde_email);*/
+        BDEEmail.setText(bde_email);
 
         AssignedBDM.setText(bdm);
         PaymentMode.setText(mode);
@@ -196,9 +206,6 @@ public class MeetingDetails extends AppCompatActivity {
                         "mailto",LeadEmail.getText().toString().trim(), null));
                 startActivity(Intent.createChooser(emailIntent, "Send email..."));
                 break;
-
-
-
 
             default:
                 return super.onOptionsItemSelected(item);

@@ -14,7 +14,6 @@
             android:screenOrientation="portrait"/>
         <activity
             android:name=".BDEAssignedBDM.MeetingDetails"
-            android:parentActivityName=".BDEAssignedBDM.BDEAssignedBDMActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".BDEAssignedBDM.BDEAssignedBDMActivity"

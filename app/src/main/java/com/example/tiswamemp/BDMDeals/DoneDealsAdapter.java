@@ -1,4 +1,4 @@
-package com.example.tiswamemp.BDEAssignedBDM;
+package com.example.tiswamemp.BDMDeals;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,30 +9,30 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.tiswamemp.BDEAssignedBDM.AssignedBDMAdapter;
+import com.example.tiswamemp.BDEAssignedBDM.MeetingDetails;
 import com.example.tiswamemp.Lead;
 import com.example.tiswamemp.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 
-public class AssignedBDMAdapter extends FirestoreRecyclerAdapter<Lead,AssignedBDMAdapter.AssignedBDMViewHolder> {
+public class DoneDealsAdapter extends FirestoreRecyclerAdapter<Lead,DoneDealsAdapter.DoneDealsViewHolder> {
 
    Context context;
 
-   public AssignedBDMAdapter(@NonNull FirestoreRecyclerOptions<Lead> options) {
+   public DoneDealsAdapter(@NonNull FirestoreRecyclerOptions<Lead> options) {
       super(options);
    }
 
-
    @Override
-   protected void onBindViewHolder(@NonNull final AssignedBDMViewHolder holder, int position, @NonNull Lead model) {
+   protected void onBindViewHolder(@NonNull final DoneDealsViewHolder holder, int position, @NonNull Lead model) {
 
       holder.LeadOrg.setText(model.getBusiness_name());
       holder.LeadName.setText(model.getName());
       holder.Date.setText(model.getMeeting_date());
-      holder.BDMName.setText(model.getBdm());
-
-
+      holder.BDEName.setText(model.getBde_name());
       holder.itemView.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
@@ -57,7 +57,7 @@ public class AssignedBDMAdapter extends FirestoreRecyclerAdapter<Lead,AssignedBD
             String remaining = snapshot.getString("remaining_amount");
             String deal_status = snapshot.getString("deal_status");
 
-            Intent i = new Intent(context,MeetingDetails.class);
+            Intent i = new Intent(context, MeetingDetails.class);
 
             i.putExtra("id",id);
             i.putExtra("org",org);
@@ -75,7 +75,7 @@ public class AssignedBDMAdapter extends FirestoreRecyclerAdapter<Lead,AssignedBD
             i.putExtra("total",total);
             i.putExtra("advance",advance);
             i.putExtra("remaining",remaining);
-            i.putExtra("key2","bde");
+            i.putExtra("key2","bdm");
 
             assert deal_status != null;
 
@@ -86,34 +86,40 @@ public class AssignedBDMAdapter extends FirestoreRecyclerAdapter<Lead,AssignedBD
                i.putExtra("key","1");
             }
 
+
+
+
+
             context.startActivity(i);
+
 
          }
       });
+
 
    }
 
    @NonNull
    @Override
-   public AssignedBDMViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
+   public DoneDealsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
       View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_lead_card,
               parent, false);
       context = v.getContext();
-      return new AssignedBDMViewHolder(v);
+      return new DoneDealsViewHolder(v);
    }
 
-   static class AssignedBDMViewHolder extends RecyclerView.ViewHolder{
+   static class DoneDealsViewHolder extends RecyclerView.ViewHolder{
 
-      TextView LeadOrg,LeadName,Date,BDMName;
+      TextView LeadOrg,LeadName,Date,BDEName;
 
-      public AssignedBDMViewHolder(@NonNull View itemView) {
+      public DoneDealsViewHolder(@NonNull View itemView) {
          super(itemView);
 
          LeadOrg = itemView.findViewById(R.id.lead_org);
          LeadName = itemView.findViewById(R.id.lead_name);
          Date = itemView.findViewById(R.id.date_text);
-         BDMName = itemView.findViewById(R.id.bdm_name);
+         BDEName = itemView.findViewById(R.id.bdm_name);
+
       }
    }
 

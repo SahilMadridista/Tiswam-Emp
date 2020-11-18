@@ -267,25 +267,13 @@
 
             </androidx.cardview.widget.CardView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.3dp"
-                android:background="@color/silver"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:id="@+id/part_two"
-                android:layout_below="@id/services_card"
-                android:layout_marginTop="10dp">
-
-            </View>
-
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 app:cardCornerRadius="5dp"
                 android:id="@+id/bdm_card"
-                android:layout_below="@id/part_two">
+                android:layout_below="@id/services_card">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -324,29 +312,16 @@
 
             </androidx.cardview.widget.CardView>
 
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.3dp"
-                android:background="@color/silver"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:id="@+id/part_three"
-                android:layout_below="@id/bdm_card"
-                android:layout_marginTop="10dp">
-
-            </View>
-
-            <!--<androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:id="@+id/bde_card"
                 app:cardCornerRadius="5dp"
+                android:visibility="gone"
                 android:layout_marginTop="10dp"
-                android:layout_below="@id/part_three">
+                android:layout_below="@id/bdm_card">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -444,7 +419,20 @@
 
                 </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>-->
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="@color/silver"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:id="@+id/part_four"
+                android:layout_below="@id/bde_card"
+                android:layout_marginTop="10dp">
+
+            </View>
+
 
 
             <androidx.cardview.widget.CardView
@@ -456,7 +444,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="20dp"
-                android:layout_below="@id/part_three"
+                android:layout_below="@id/part_four"
                 android:layout_marginStart="10dp">
 
                 <RelativeLayout

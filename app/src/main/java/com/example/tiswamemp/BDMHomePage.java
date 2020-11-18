@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tiswamemp.BDMDeals.BDMDoneDeals;
 import com.example.tiswamemp.Profiles.BDMProfileActivity;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -121,7 +122,7 @@ public class BDMHomePage extends AppCompatActivity {
 
          case R.id.done_deals:
 
-            Toast.makeText(getApplicationContext(),"Done deals button clicked",Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(), BDMDoneDeals.class));
             break;
 
          case R.id.signout:
