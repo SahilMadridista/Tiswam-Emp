@@ -15,6 +15,12 @@
     </item>
 
     <item
+        android:id="@+id/show_today_meetings"
+        android:title="@string/show_today_meetings">
+
+    </item>
+
+    <item
         android:id="@+id/done_deals"
         android:title="@string/done_deals">
 

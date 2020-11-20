@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.tiswamemp.BDEAssignedBDM.BDEAssignedBDMActivity;
 import com.example.tiswamemp.Profiles.BDEProfileActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -41,6 +42,7 @@ public class BDEHomePage extends AppCompatActivity {
       NewLeadButton.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
+
             /*assert firebaseAuth.getCurrentUser() != null;
             String userID = firebaseAuth.getCurrentUser().getUid();
             firebaseFirestore.collection("Employees").document(userID).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -69,6 +71,15 @@ public class BDEHomePage extends AppCompatActivity {
 
          }
       });
+
+      setUpRecyclerView();
+
+   }
+
+   private void setUpRecyclerView() {
+
+
+
 
    }
 

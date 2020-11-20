@@ -3,10 +3,12 @@ package com.example.tiswamemp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,12 +43,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Objects;
 
-public class BDMHomePage extends AppCompatActivity {
+public class BDMHomePage extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
    FirebaseAuth firebaseAuth;
    androidx.appcompat.widget.Toolbar toolbar;
    FirebaseFirestore firebaseFirestore;
    RelativeLayout LoadingLayout,NoResultLayout, Parent;
+   String name;
+   TextView DateText;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -63,14 +68,9 @@ public class BDMHomePage extends AppCompatActivity {
 
       Calendar calendar = Calendar.getInstance();
       final String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
-      TextView DateText = findViewById(R.id.today_date);
+
+      DateText = findViewById(R.id.today_date);
       DateText.setText(currentDate);
-      DateText.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view) {
-            startActivity(new Intent(getApplicationContext(),TestActivity.class));
-         }
-      });
 
       assert firebaseAuth.getCurrentUser() != null;
       String userID = Objects.requireNonNull(firebaseAuth.getCurrentUser()).getUid();
@@ -85,7 +85,7 @@ public class BDMHomePage extends AppCompatActivity {
             if(task.isSuccessful()){
                DocumentSnapshot documentSnapshot = task.getResult();
                assert documentSnapshot != null;
-               String name = documentSnapshot.getString("name");
+               name = documentSnapshot.getString("name");
                showTodayMeetings(currentDate,name);
 
             }else{
@@ -117,7 +117,21 @@ public class BDMHomePage extends AppCompatActivity {
 
          case R.id.schedule:
 
-            Toast.makeText(getApplicationContext(),"Calender button clicked",Toast.LENGTH_SHORT).show();
+            DialogFragment datePicker = new DatePickerFragment();
+            datePicker.show(getSupportFragmentManager(), "date picker");
+
+            break;
+
+         case R.id.show_today_meetings:
+
+            Calendar calendar = Calendar.getInstance();
+            final String currentDate = DateFormat.getDateInstance(DateFormat.FULL).format(calendar.getTime());
+
+            DateText = findViewById(R.id.today_date);
+            DateText.setText(currentDate);
+
+            showTodayMeetings(currentDate,name);
+
             break;
 
          case R.id.done_deals:
@@ -127,8 +141,24 @@ public class BDMHomePage extends AppCompatActivity {
 
          case R.id.signout:
 
-            SignOutBottomSheetDialog bottomSheet = new SignOutBottomSheetDialog();
-            bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+            // ---------------  This is for sending data to bottom sheet ( next 6 lines ) --------------------- //
+
+            /*SignOutBottomSheetDialog bottomSheet = new SignOutBottomSheetDialog();
+            Bundle bundle = new Bundle();
+            String msg = "Football is life";
+            bundle.putString("message", msg );
+            bottomSheet.setArguments(bundle);
+            bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");*/
+
+
+            SharedPreferences preferences = getApplicationContext().getSharedPreferences("MyPref", MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putInt("login", SharedPrefConsts.NO_LOGIN);
+            editor.apply();
+
+            firebaseAuth.signOut();
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
 
          default:
             return super.onOptionsItemSelected(item);
@@ -138,7 +168,7 @@ public class BDMHomePage extends AppCompatActivity {
       return true;
    }
 
-   private void showTodayMeetings(String currentDate, String name) {
+   private void showTodayMeetings(final String currentDate, String name) {
 
       CollectionReference collectionReference = firebaseFirestore.collection("Leads");
       Query query = collectionReference.whereEqualTo("deal_status","pending")
@@ -153,14 +183,14 @@ public class BDMHomePage extends AppCompatActivity {
             if(queryDocumentSnapshots.size() == 0){
 
                NoResultLayout.setVisibility(View.VISIBLE);
-               String snack = "You don't have any meetings for today yet.";
+               String snack = "You don't have any meetings for " + currentDate;
                showSnackBar(snack);
 
             }
 
             else{
 
-               String snack = "You have " + queryDocumentSnapshots.size() + " meetings for today.";
+               String snack = "You have " + queryDocumentSnapshots.size() + " meetings for " + currentDate;
                showSnackBar(snack);
 
             }
@@ -187,6 +217,18 @@ public class BDMHomePage extends AppCompatActivity {
 
       Snackbar snackbar = Snackbar.make(Parent,snack,Snackbar.LENGTH_LONG);
       snackbar.show();
+
+   }
+
+   @Override
+   public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+      Calendar c = Calendar.getInstance();
+      c.set(Calendar.YEAR, year);
+      c.set(Calendar.MONTH, month);
+      c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+      String date = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+      DateText.setText(date);
+      showTodayMeetings(date,name);
 
    }
 

@@ -86,16 +86,10 @@ public class DoneDealsAdapter extends FirestoreRecyclerAdapter<Lead,DoneDealsAda
                i.putExtra("key","1");
             }
 
-
-
-
-
             context.startActivity(i);
-
 
          }
       });
-
 
    }
 

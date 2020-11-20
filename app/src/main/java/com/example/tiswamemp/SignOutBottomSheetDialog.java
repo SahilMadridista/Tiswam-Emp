@@ -27,20 +27,29 @@ public class SignOutBottomSheetDialog extends BottomSheetDialogFragment {
 
       final Context context = v.getContext();
       final FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-
       Button SignOut = v.findViewById(R.id.confirm_sign_out);
+
+
+      // ---------------  This is for getting data from activity ( next 2 lines ) --------------------- //
+
+      /*assert this.getArguments() != null;
+      String myValue = this.getArguments().getString("message");*/
+
+
+
       SignOut.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
 
-            SharedPreferences preferences = context.getSharedPreferences("MyPref", MODE_PRIVATE);
+            /*SharedPreferences preferences = context.getSharedPreferences("MyPref", MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
             editor.putInt("login", SharedPrefConsts.NO_LOGIN);
             editor.apply();
 
             firebaseAuth.signOut();
             startActivity(new Intent(context,MainActivity.class));
-            Objects.requireNonNull(getActivity()).finish();
+            Objects.requireNonNull(getActivity()).finish();*/
+
 
          }
       });

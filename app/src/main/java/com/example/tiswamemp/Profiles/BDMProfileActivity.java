@@ -16,7 +16,9 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.tiswamemp.BottomSheets.ChangePasswordBottomSheet;
 import com.example.tiswamemp.R;
+import com.example.tiswamemp.SignOutBottomSheetDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -71,6 +73,14 @@ public class BDMProfileActivity extends AppCompatActivity {
                         .repeat(0)
                         .duration(500)
                         .playOn(ChangePassCard);
+
+                /*
+
+                ChangePasswordBottomSheet bottomSheet = new ChangePasswordBottomSheet();
+                bottomSheet.show(getSupportFragmentManager(), "exampleBottomSheet");
+
+                */
+
             }
         });
 

@@ -1,5 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Tiswam Emp</string>
+
+    <string name="app_name">Tech-Mark Employees</string>
 
     <string name="tech_mark">TECH MARK</string>
 
@@ -75,7 +76,8 @@
     <string name="search">Search</string>
     <string name="confirm_sign_out">Do you really want to sign out ?</string>
     <string name="confirm">Confirm</string>
-    <string name="calender">See meetings by date</string>
+    <string name="calender">Search meetings by date</string>
+    <string name="show_today_meetings">Show today\'s meetings</string>
 
 
     // BDM home page
@@ -221,6 +223,8 @@
 
     <string name="make_call">Call</string>
     <string name="make_email">Email</string>
+
+
 
 
 </resources>
