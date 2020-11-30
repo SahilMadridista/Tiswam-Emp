@@ -114,6 +114,7 @@ public class AssignedBDMAdapter extends FirestoreRecyclerAdapter<Lead,AssignedBD
          LeadName = itemView.findViewById(R.id.lead_name);
          Date = itemView.findViewById(R.id.date_text);
          BDMName = itemView.findViewById(R.id.bdm_name);
+
       }
    }
 

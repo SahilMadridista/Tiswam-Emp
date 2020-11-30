@@ -3,6 +3,8 @@ package com.example.tiswamemp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
+
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
@@ -24,8 +26,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 
 public class NewLeadActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
@@ -74,18 +79,9 @@ public class NewLeadActivity extends AppCompatActivity implements DatePickerDial
       DateButton.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View view) {
+
             DialogFragment datePicker = new DatePickerFragment();
             datePicker.show(getSupportFragmentManager(), "date picker");
-
-            /*DatePickerDialog datePickerDialog = new DatePickerDialog(NewLeadActivity.this, new DatePickerDialog.OnDateSetListener() {
-               @Override
-               public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                  date = i2 + " / " + i1 + " / " + i;
-                  DateButton.setText(date);
-               }
-            },year,month,day);
-            datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-            datePickerDialog.show();*/
 
          }
 
@@ -238,15 +234,37 @@ public class NewLeadActivity extends AppCompatActivity implements DatePickerDial
 
    }
 
-
    @Override
    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
       Calendar c = Calendar.getInstance();
       c.set(Calendar.YEAR, year);
       c.set(Calendar.MONTH, month);
       c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-      date = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-      DateButton.setText(date);
+
+      @SuppressLint("SimpleDateFormat")
+      SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+      String date1 = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+
+      date = sdf.format(c.getTime());
+      System.out.println("----------------------------------------"+date);
+
+      
+      try {
+         Date d = sdf.parse(date);
+         assert d != null;
+         long time = d.getTime()/10000000;
+
+         DateButton.setText(date1);
+
+         System.out.println("-------------------------------------");
+         System.out.println(time);
+
+      } catch (ParseException e) {
+         e.printStackTrace();
+      }
+
    }
 
    @Override
